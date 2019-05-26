@@ -40,7 +40,7 @@ const sendLintNotify = (result = 'default') => {
 };
 
 cron.schedule('* * * * *', () => {
-    console.log('running a task every minute');
+    console.log('running a task every minute : ' + new Date());
 
     const SIZE_KEY = 'depth3';
     const COLOR_KEY = 'depth4';
@@ -65,8 +65,6 @@ cron.schedule('* * * * *', () => {
                     const { data } = result;
                     if (data.retDisplayType.toLowerCase() === 'count') {
                         sendLintNotify(data);
-                    } else {
-                        console.log('동작 중... : ' + new Date());
                     }
                 });
         }
