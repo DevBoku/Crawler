@@ -35,7 +35,7 @@ const sendLintNotify = (result = 'default') => {
             }
         })
         .then(response => {
-            console.log(response.data);
+            // console.log(response.data);
         });
 };
 
@@ -63,7 +63,6 @@ cron.schedule('* * * * *', () => {
             axios.post(URL, qs.stringify(requestBody), config)
                 .then((result) => {
                     const { data } = result;
-                    console.log(data);
                     if (data.retDisplayType.toLowerCase() === 'count') {
                         sendLintNotify(data);
                     } else {
