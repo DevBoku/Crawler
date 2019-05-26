@@ -66,6 +66,8 @@ cron.schedule('* * * * *', () => {
                     console.log(data);
                     if (data.retDisplayType.toLowerCase() === 'count') {
                         sendLintNotify(data);
+                    } else {
+                        console.log('동작 중...');
                     }
                 });
         }
