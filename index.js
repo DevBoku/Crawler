@@ -66,8 +66,6 @@ cron.schedule('* * * * *', () => {
                     console.log(data);
                     if (data.retDisplayType.toLowerCase() === 'count') {
                         sendLintNotify(data);
-                    } else {
-                        sendLintNotify(data);
                     }
                 });
         }
