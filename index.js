@@ -1,6 +1,14 @@
 const cron = require('node-cron');
 const axios = require('axios');
 const qs = require('querystring');
+const express = require('express');
+const app = express();
+
+app.get('/', (req, res) => {
+    res.end('Running Server!');
+});
+
+app.listen(3000, () => console.log('Start Server'));
 
 const URL = 'https://www.speakingmax.com/Apply/ajaxPackage';
 
