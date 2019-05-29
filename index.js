@@ -14,7 +14,7 @@ const config = {
     }
 };
 
-const sendLintNotify = (result = 'default') => {
+const sendLineNotify = (result = 'default') => {
     let message;
     if (!result) {
         message = 'Error 발생, 확인 바랍니다.';
@@ -64,7 +64,7 @@ cron.schedule('* * * * *', () => {
                 .then((result) => {
                     const { data } = result;
                     if (data.retDisplayType.toLowerCase() === 'count') {
-                        sendLintNotify(data);
+                        sendLineNotify(data);
                     }
                 });
         }
