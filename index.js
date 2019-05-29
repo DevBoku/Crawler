@@ -38,7 +38,7 @@ const sendLineNotify = (result = 'default') => {
         });
 };
 
-cron.schedule('* * * * *', () => {
+cron.schedule('* 8-20 * * *', () => {
     console.log('running a task every minute : ' + new Date());
 
     const SIZE_KEY = 'depth3';
